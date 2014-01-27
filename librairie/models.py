@@ -3,6 +3,7 @@ from django.db import models
 class Auteur(models.Model):
     nom=models.CharField(max_length=255)
     prenom=models.CharField(max_length=255, blank=True, null=True)
+    slug=models.CharField(max_length=255)
 
     def __unicode__(self):
         if self.prenom:
@@ -10,12 +11,17 @@ class Auteur(models.Model):
         else:
             return self.nom
 
-class Tag(model.Model):
+class Tag(models.Model):
+    tag=models.CharField(max_length=255)
     slug=models.CharField(max_length=255, unique=True)
 
-class Texte(models.Model)
-    auteur=models.ForeignKeyField(Auteur)
+    def __unicode__(self):
+        return self.tag
+
+class Texte(models.Model):
+    auteur=models.ForeignKey(Auteur)
     titre=models.CharField(max_length=255)
+    slug=models.CharField(max_length=255)
     description=models.TextField(blank=True, null=True)
     tags=models.ManyToManyField(Tag)
     html = models.FileField(upload_to="lives-html", blank=True, null=True)
@@ -24,4 +30,4 @@ class Texte(models.Model)
     date_modification = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return self.titre+' ('+self.auteur+')'
+        return self.titre+' ('+str(self.auteur)+')'

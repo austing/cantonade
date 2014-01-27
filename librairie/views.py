@@ -6,20 +6,38 @@ from librairie.models import Auteur, Tag, Texte
 
 class AuteurTexteList(ListView):
 
-    template_name = 'librairie/livres_par_auteur.html'
+    template_name = 'librairie/textes_par_auteur.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AuteurTexteList, self).get_context_data(**kwargs)
+        context['auteur'] = self.auteur
+        return context
 
     def get_queryset(self):
-        self.auteur = get_object_or_404(Auteur, name=self.args[0])
+        self.auteur = get_object_or_404(Auteur, slug=self.args[0])
         return Texte.objects.filter(auteur=self.auteur)
 
 class TagTexteList(ListView):
 
-    template_name = 'librairie/livres_par_tag.html'
+    template_name = 'librairie/textes_par_tag.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TagTexteList, self).get_context_data(**kwargs)
+        context['tag'] = self.tag
+        return context
 
     def get_queryset(self):
-        self.tag = get_object_or_404(Tag, name=self.args[0])
-        return Texte.objects.filter(tag=self.tag)
+        self.tag = get_object_or_404(Tag, slug=self.args[0])
+        return Texte.objects.filter(tags=self.tag)
+
+class AuteurList(ListView):
+
+    model = Auteur
+
+class TagList(ListView):
+
+    model = Tag
 
 class TexteDetailView(DetailView):
 
-    model = Livre
+    model = Texte

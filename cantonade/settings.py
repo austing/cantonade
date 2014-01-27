@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'librairie',
+    'south'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,6 +56,10 @@ ROOT_URLCONF = 'cantonade.urls'
 
 WSGI_APPLICATION = 'cantonade.wsgi.application'
 
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
