@@ -1,10 +1,6 @@
-<html>
-<head>
-<title>A la cantonnade</title>
-    <meta charset="utf-8">
+{% extends "librairie/base.html" %}
 
-<link rel="stylesheet" type="text/css" href="/static/css/cantonade.css">
-
+{% block media %}
     <script src="/static/js/jquery-1.10.2.js"></script> 
     <script> 
     $(function(){
@@ -12,61 +8,57 @@
         $("#book-content").slideToggle("slow", function(){
             $("#book-content").load("{{MEDIA_URL}}{{texte.html}}");
             $("#book-content").addClass("filled");
+            $("#lower-toptoe").addClass("filled");
+            $("#lower-toe-center").addClass("filled");
             $("#lower-container").addClass("filled");
         });
         $("#book-content").slideToggle("fast");
       });
     });
     </script> 
-
-</head>
-<body>
+{% endblock %}
 
 
-<div id="upper-container">
-<div id="top-container"> 
-  <div id="top-content">
-        <a id="site-title">La cantonade</a>
+{% block title %}La cantonade - {{texte.titre}}, {{texte.auteur}}{% endblock %}
 
+        {% block page_title %}
+            <a class="h1" href="#">{{texte.titre}} </a><a class="h2" href="/auteur/{{texte.auteur.slug}}">{{texte.auteur.prenom}} {{texte.auteur.nom}}&nbsp;</a>
+        {% endblock %}
+
+    
+    
+
+        {% block page_details %}
+            <div id="tags">
+            {% for tag in texte.tags.all %}
+            <a href="/tag/{{tag.slug}}" class="tag">{{tag.slug}}</a> 
+            {% endfor %}
+            </div>
+            
+            
+            <div id="description">
+            {{texte.description|safe}}
+            </div>
+            
+            <div id="buttons">
+            <a class="button" href="#">Télécharger format zine</a>
+            <a class="button" id="lire">Lire en ligne</a>
+            </div>        
+        {% endblock %}
+
+{% block page_lower %}
+<div id="lower-toptoe"> 
+  <div id="lower-toptoe-center">
   </div>
 </div>
-    <div id="book-title">
-    <a class="h1" href="#">{{texte.titre}} </a><a class="h2" href="/auteur/{{texte.auteur.slug}}">{{texte.auteur.prenom}} {{texte.auteur.nom}}&nbsp;</a>
-    </div>
-    
-    
-      <div id="book-details">
-    
-    <div id="tags">
-    {% for tag in texte.tags.all %}
-    <a href="/tag/{{tag.slug}}" class="tag">{{tag.slug}}</a> 
-    {% endfor %}
-    </div>
-    
-    
-    <div id="description">
-    {{texte.description|safe}}
-    </div>
-    
-    
-        <div id="buttons">
-        <a class="button" href="#">Télécharger format zine</a>
-        <a class="button" id="lire">Lire en ligne</a>
-        </div>
-    
-    
-      </div>
-</div>
-
-<a name="texte"></a>
 
 <div id="lower-container"> 
-
   <div id="book-content">
-
-
   </div>
 </div>
 
-</body>
-</html>
+<div id="lower-toe"> 
+  <div id="lower-toe-center">
+  </div>
+</div>
+{% endblock %}

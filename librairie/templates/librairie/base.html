@@ -1,0 +1,59 @@
+<html>
+    <head>
+
+        <title>{% block title %}La cantonnade{% endblock %}</title>
+
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" type="text/css" href="/static/css/cantonade.css">
+
+        {% block media %}
+        {% endblock %}
+
+    </head>
+    <body>
+
+        <div id="upper-container">
+
+              <div id="top-container"> 
+                <div id="top-content">
+                    <a id="site-title" href="/">La cantonade</a>
+                </div>
+              </div>
+
+              <div id="book-title">
+                {% block page_title %}
+
+                {% endblock %}
+              </div>
+
+
+              <div id="book-details">
+                {% block page_details %}
+
+                {% endblock %}
+              </div>
+
+        </div>
+
+        {% block page_lower %}
+
+            <div id="lower-toptoe"> 
+              <div id="lower-toptoe-center">
+              </div>
+            </div>
+
+            <div id="lower-container"> 
+              <div id="book-content">
+              </div>
+            </div>
+
+            <div id="lower-toe"> 
+              <div id="lower-toe-center">
+              </div>
+            </div>
+
+        {% endblock %}
+
+    </body>
+</html>
