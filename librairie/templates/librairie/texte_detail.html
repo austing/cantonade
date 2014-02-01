@@ -3,217 +3,68 @@
 <title>A la cantonnade</title>
     <meta charset="utf-8">
 
- <style type="text/css">
-  @font-face {
-   font-family: 'Courier Prime';
-   font-style: normal;
-   src: local('Courier Prime'), url(courier_prime.woff) format('woff');
-  }
+<link rel="stylesheet" type="text/css" href="/static/css/cantonade.css">
 
-   body {
-     margin: 0;
-     padding: 0;
-     background-color: #880033;
-    background-image:url('blacknoise.png');
-    background-repeat:repeat;
-/*     background-color: #FFEE00; */
-    font-family: Courier New;
-   }
-   
-   div {
-     margin: 0px;
-   }
+    <script src="/static/js/jquery-1.10.2.js"></script> 
+    <script> 
+    $(function(){
+      $(".button#lire").click(function(){
+        $("#book-content").slideToggle("slow", function(){
+            $("#book-content").load("{{MEDIA_URL}}{{texte.html}}");
+            $("#book-content").addClass("filled");
+            $("#lower-container").addClass("filled");
+        });
+        $("#book-content").slideToggle("fast");
+      });
+    });
+    </script> 
 
-   a.h1, a.h2 {
-    font-family: Courier New;
-    font-size: 30pt;
-    line-height: 40pt;
-    margin: 0px;
-    padding: 0px;
-    color: rgba(0,0,0,0.6);
-    background-image:url('noisebg.png');
-    background-repeat:repeat;
-    text-decoration: none;
-   }
-   a.h1:hover {
-    color: #330022;
-    
-   }
-   
-   a.h2 {
-    color: rgba(235,225,185,0.6);
-   }
-
-   #book-title {
-     width: 800px;
-     margin: 0 auto;
-     background-color: transparent;
-/*     box-shadow: 0px 7px 0px rgba(0,0,0,0.2); */
-/*     border-bottom: 8px solid rgba(255,215,205,0.2); */
-     padding: 30px;
-     padding-top: 25px;
-     padding-left: 20px;
-   }
-
-  div#description p {
-    font-family: Courier New;
-
-   margin: 0px;
-   padding: 0px;
-   margin-bottom: 5px;
-   margin-top: 0px;
-   
-   font-size: 16px;
-   line-height: 19px;
-   display: inline;
-   color: black;
-    background-image:url('noisebg2.png');
-    background-repeat:repeat;
-
-  }
-  div#description {
-  margin-bottom: 25px;
-  }
-
-  div#tags {
-     margin-top: 30px;
-  }
-
-  div#tags a {
-     padding: 7px;
-     padding-top: 2px;
-     padding-bottom: 3px;
-     color: rgba(0,0,0,0.6);
-     background-color: #994455;
-     text-shadow: 1px 1px 0px rgba(255,255,255,0.05);
-     border-radius: 2px;
-     border: 2px solid rgba(255,255,255,0.1)
-     display: inline-block;
-     text-decoration: none;
-  }
-  div#tags a:hover {
-     background-color: #551122;
-  }
-
-  #book-details {
-     width: 800px;
-     margin: 0 auto;
-     background-color: transparent;
-/*     box-shadow: 0px 7px 0px rgba(0,0,0,0.2); */
-     padding: 30px;
-     padding-top: 25px;
-     padding-left: 20px;
-     padding-top: 25px;
-     font-size: 12pt;
-     color: #530018;
-     line-height: 14pt;
-     padding-bottom: 0px;
-  }
-
-   #lower-container {
-     width: 100%;
-/*     background-color: #775555;*/
-   }
-   #top-container {
-     width: 100%;
-     background-color: rgba(200,180,150,0.2);
-   }
-
-   #top-content {
-     width: 800px;
-     margin: 0 auto;
-     padding: 30px;
-     padding-top: 10px;
-     padding-bottom: 15px;
-     background-color: rgba(0,0,0,0.1);
-   }
-
-   #book-content {
-     width: 800px;
-     margin: 0 auto;
-     padding: 30px;
-     padding-top: 10px;
-     font-family: Courier New;
-     font-size: 12pt;
-     color: rgba(0,0,0,0.5);
-     line-height: 14pt;
-     padding-bottom: 15px;
-   }
-
-  #lower-container.filled {
-    background-color: rgba(0,0,0,0.2);
-  }
-
-  #lower-container.filled #book-content {
-    background-color: rgba(0,0,0,0.2);
-  }
-
-    #buttons {
-     margin-top: 25px;
-     margin-bottom: 10px;
-    }
-
-   .button {
-     padding: 8px;
-     padding-bottom: 10px;
-     color: rgba(0,0,0,1);
-     font-weight: bold;
-     background-color: rgba(180,190,170,0.8);
-     text-shadow: 1px 1px 0px rgba(255,255,255,0.05);
-     border: 2px solid rgba(255,255,255,0.1)
-     display: inline-block;
-     text-decoration: none;
-    background-image:url('noisebg.png');
-    background-repeat:repeat;
-
-   }
-   
-   .button:hover {
-     background-color: #551122;
-   }
- </style>
 </head>
 <body>
+
+
+<div id="upper-container">
 <div id="top-container"> 
   <div id="top-content">
-  &nbsp;
+        <a id="site-title">La cantonade</a>
+
   </div>
 </div>
-
-
-<div id="book-title">
-<a class="h1" href="#">{{texte.titre}}</a> <a class="h2" href="/auteur/{{texte.auteur.slug}}">{{texte.auteur.prenom}} {{texte.auteur.nom}}</a>
-</div>
-
-
-  <div id="book-details">
-
-
-
-<div id="description">
-{{texte.description|safe}}
-</div>
-
-<div id="tags">
-{% for tag in texte.tags.all %}
-<a href="/tag/{{tag.slug}}" class="tag">{{tag.slug}}</a> 
-{% endfor %}
-</div>
-
-    <div id="buttons">
-    <a class="button" href="#">Télécharger format zine</a>
-    <a class="button"  href="#texte">Lire en ligne</a>
+    <div id="book-title">
+    <a class="h1" href="#">{{texte.titre}} </a><a class="h2" href="/auteur/{{texte.auteur.slug}}">{{texte.auteur.prenom}} {{texte.auteur.nom}}&nbsp;</a>
     </div>
-
-
-  </div>
-
+    
+    
+      <div id="book-details">
+    
+    <div id="tags">
+    {% for tag in texte.tags.all %}
+    <a href="/tag/{{tag.slug}}" class="tag">{{tag.slug}}</a> 
+    {% endfor %}
+    </div>
+    
+    
+    <div id="description">
+    {{texte.description|safe}}
+    </div>
+    
+    
+        <div id="buttons">
+        <a class="button" href="#">Télécharger format zine</a>
+        <a class="button" id="lire">Lire en ligne</a>
+        </div>
+    
+    
+      </div>
+</div>
 
 <a name="texte"></a>
 
-<div id="lower-container"  class="filled"> 
+<div id="lower-container"> 
 
   <div id="book-content">
+
+
   </div>
 </div>
 

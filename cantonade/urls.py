@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
-
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 admin.autodiscover()
 
@@ -19,3 +20,6 @@ urlpatterns += patterns('django.contrib.flatpages.views',
     url(r'^colophon/$', 'flatpage', {'url': '/colophon/'}, name='colophon'),
     url(r'^/$', 'flatpage', {'url': '/'}, name='index'),
 )
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

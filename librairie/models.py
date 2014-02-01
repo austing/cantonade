@@ -24,7 +24,7 @@ class Texte(models.Model):
     slug=models.CharField(max_length=255)
     description=models.TextField(blank=True, null=True)
     tags=models.ManyToManyField(Tag)
-    html = models.FileField(upload_to="lives-html", blank=True, null=True)
+    html = models.FileField(upload_to="livres-html", blank=True, null=True)
     pdf = models.FileField(upload_to="livres-pdf", blank=True, null=True)
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
