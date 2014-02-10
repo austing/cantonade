@@ -95,3 +95,9 @@ SITE_ID = 1
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/Users/austin/Sites/cantonade/cantonade/librairie/media/'
+
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
