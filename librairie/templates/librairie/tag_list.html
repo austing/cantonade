@@ -2,14 +2,21 @@
 
 {% block title %}La cantonade - les tags{% endblock %}
 
+{% block bodyclass %}list{% endblock %}
+
 {% block page_title %}
 <a class="h1" href="#">tags</a>
 {% endblock %}
 
 {% block page_details %}
-<div id="description" class="tags">
+{% endblock %}
+
+{% block page_lower %}
+<div id="lower-container" > 
+  <div id="text-list">
 {% for tag in tag_list %}
-<p><a href='/tag/{{tag.slug}}'>{{tag.tag}}</a><p>
+<a href='/tag/{{tag.slug}}' class="big-tag">{{tag.tag}}</a>
 {% endfor %}
+  </div>
 </div>
 {% endblock %}

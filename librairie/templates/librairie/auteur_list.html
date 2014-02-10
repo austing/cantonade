@@ -2,15 +2,22 @@
 
 {% block title %}La cantonade - les auteurs{% endblock %}
 
+{% block bodyclass %}list{% endblock %}
+
 {% block page_title %}
 <a class="h1" href="#">auteurs</a>
 {% endblock page_title %}
 
 
 {% block page_details %}
-    <div id="description" class="auteurs">
+{% endblock %}
+
+{% block page_lower %}
+<div id="lower-container" > 
+  <div id="text-list">
     {% for auteur in auteur_list %}
-    <p><a href='/auteur/{{auteur.slug}}'>{{auteur.prenom}} {{auteur.nom}}</a><p>
-    {% endfor %}
-    </div>
+<a href='/auteur/{{auteur.slug}}' class="big-tag">{{auteur.prenom}} {{auteur.nom}}</a>
+{% endfor %}
+  </div>
+</div>
 {% endblock %}

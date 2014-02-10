@@ -19,7 +19,7 @@
 /*     background-color: #FFEE00; */
     font-family: Courier New;
    }
-   body.tag {
+   body.tag, body.list {
        background-image:url('/static/images/bluebg-d2.png');
 
    }
@@ -56,7 +56,7 @@
 
 }
 
-body.tag #upper-container {
+body.tag #upper-container, body.list #upper-container {
        background-image:url('/static/images/greenbg.png');
 }
 
@@ -414,4 +414,24 @@ background-image:url('/static/images/bluebg-d2.png');
      position: relative;
      top: -8px;
    }
+   
+  a.big-tag, #text-list a.big-tag {
+    font-family: Courier New;
+    font-size: 50px;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    padding: 0px;
+    margin: 0px;
+    padding: 0px;
+    color: rgba(0,0,0,0.6);
+    background-image:url('/static/images/redbg3.png');
+    background-repeat:repeat;
+    text-decoration: none;
+    display: block;
+    clear: both;
+    float: left;
+    line-height: normal;
+  }
+  a.big-tag:hover {
+    color: black;
+  }
    
