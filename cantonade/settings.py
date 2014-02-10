@@ -101,3 +101,5 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+LANGUAGE_CODE = 'fr'
