@@ -11,7 +11,7 @@
         {% endblock %}
 
     </head>
-    <body>
+    <body class="{% block bodyclass %}{% endblock %}">
 
         <div id="upper-container">
 
@@ -27,12 +27,11 @@
                 {% endblock %}
               </div>
 
-
-              <div id="book-details">
                 {% block page_details %}
-
+                  <div id="book-details">
+    
+                  </div>
                 {% endblock %}
-              </div>
 
         </div>
 

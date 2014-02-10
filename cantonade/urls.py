@@ -4,10 +4,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 admin.autodiscover()
 
-from librairie.views import TagTexteList, AuteurTexteList, TexteDetailView, AuteurList, TagList
+from librairie.views import TagTexteList, AuteurTexteList, TexteDetailView, AuteurList, TagList, RecentTexteList
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
+    (r'^$', RecentTexteList.as_view()),
 
     (r'^tag/$', TagList.as_view()),
     (r'^auteur/$', AuteurList.as_view()),    
@@ -18,7 +19,7 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('django.contrib.flatpages.views',
     url(r'^colophon/$', 'flatpage', {'url': '/colophon/'}, name='colophon'),
-    url(r'^/$', 'flatpage', {'url': '/'}, name='index'),
+    url(r'^index/$', 'flatpage', {'url': '/index/'}, name='index'),
 )
 
 

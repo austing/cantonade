@@ -7,10 +7,48 @@
 {% endblock %}
 
 
+{% block bodyclass %}tag{% endblock %}
+
 {% block page_details %}
-    <div id="description" class="textes">
+                  <div id="book-details" class="author">
+
+            <div id="description">
+            {{auteur.bio|safe}}
+            </div>
+
+</div>
+{% endblock %}
+
+
+{% block page_lower %}
+
+
+
+<div id="lower-toptoe" class="filled"> 
+  <div id="lower-toptoe-center" class="filled">
+            <span class="heading">Textes</span>
+  </div>
+</div>
+
+<div id="lower-container" class="filled"> 
+  <div id="text-list" class="filled">
+    <div class="textes">
     {% for texte in texte_list %}
-    <p><a href='/texte/{{texte.slug}}'>{{texte.titre}}</a><p>
+    <div class="text">
+    <a href='/texte/{{texte.slug}}' class="title">{{texte.titre}}</a>
+            <div class="text-tags">
+            {% for tag in texte.tags.all %}
+            <a href="/tag/{{tag.slug}}" class="tag">{{tag.slug}}</a> 
+            {% endfor %}
+            </div>
+    </div>
     {% endfor %}
     </div>
+  </div>
+</div>
+
+<div id="lower-toe"> 
+  <div id="lower-toe-center" class="filled">
+  </div>
+</div>
 {% endblock %}

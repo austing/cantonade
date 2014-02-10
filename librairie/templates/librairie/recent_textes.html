@@ -1,0 +1,70 @@
+{% extends "librairie/base.html" %}
+
+{% load humanize %}
+
+{% block media %}
+    <script src="/static/js/jquery-1.10.2.js"></script> 
+    <script> 
+    $(function(){
+      $(".button#lire").click(function(){
+        $("#book-content").slideToggle("slow", function(){
+            $("#book-content").load("{{MEDIA_URL}}{{texte.html}}");
+            $("#book-content").addClass("filled");
+            $("#lower-toptoe").addClass("filled");
+            $("#lower-toe-center").addClass("filled");
+            $("#lower-container").addClass("filled");
+        });
+        $("#book-content").slideToggle("fast");
+      });
+    });
+    </script> 
+{% endblock %}
+
+
+
+{% block title %}{{flatpage.title}}{% endblock %}
+
+{% block page_title %}
+    <a class="h1" href="#">{{flatpage.title}}</a><a class="h2" href="#"> {{flatpage.subtitle}}&nbsp;</a>
+{% endblock %}
+
+{% block page_details %}
+    <div id="book-details">
+        <div id="description">
+            {{flatpage.content|safe}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_lower %}
+<div id="lower-toptoe" class="filled"> 
+  <div id="lower-toptoe-center" class="filled">
+            <span class="heading">Récemment édités:</span>
+  </div>
+</div>
+
+<div id="lower-container" class="filled"> 
+  <div id="text-list" class="filled">
+    <div class="textes">
+    {% for texte in texte_list %}
+    <div class="text">
+    <a href='/texte/{{texte.slug}}' class="title">{{texte.titre}}</a><span class="author"> de <a href='/auteur/{{texte.auteur.slug}}'>{{texte.auteur.prenom}} {{texte.auteur.nom}}</a></span>
+    
+            <div class="text-tags"><div class='text-date'>{{texte.date_de_publication|naturalday}}</div>
+            {% for tag in texte.tags.all %}
+            <a href="/tag/{{tag.slug}}" class="tag">{{tag.slug}}</a> 
+            {% endfor %}
+            </div>
+    
+
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div id="lower-toe"> 
+  <div id="lower-toe-center" class="filled">
+  </div>
+</div>
+{% endblock %}

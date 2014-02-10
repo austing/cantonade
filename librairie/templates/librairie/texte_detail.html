@@ -29,21 +29,23 @@
     
 
         {% block page_details %}
-            <div id="tags">
-            {% for tag in texte.tags.all %}
-            <a href="/tag/{{tag.slug}}" class="tag">{{tag.slug}}</a> 
-            {% endfor %}
-            </div>
-            
-            
-            <div id="description">
-            {{texte.description|safe}}
-            </div>
-            
-            <div id="buttons">
-            <a class="button" href="#">Télécharger format zine</a>
-            <a class="button" id="lire">Lire en ligne</a>
-            </div>        
+          <div id="book-details">
+                <div id="tags">
+                {% for tag in texte.tags.all %}
+                <a href="/tag/{{tag.slug}}" class="tag">{{tag.slug}}</a> 
+                {% endfor %}
+                </div>
+                
+                
+                <div id="description">
+                {{texte.description|safe}}
+                </div>
+                
+                <div id="buttons">
+                <a class="button" href="#">Télécharger format zine</a>
+                <a class="button" id="lire">Lire en ligne</a>
+                </div>    
+          </div>
         {% endblock %}
 
 {% block page_lower %}
