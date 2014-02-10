@@ -369,6 +369,7 @@ background-image:url('/static/images/bluebg-d2.png');
      text-decoration: none;
     background-image:url('/static/images/redbg2.png');
     background-repeat:repeat;
+     cursor: pointer;
      cursor: hand;
    }
    
