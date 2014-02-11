@@ -1,10 +1,9 @@
 from django.shortcuts import render
-
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 from librairie.models import Auteur, Tag, Texte, IndexFlatPage
-
 from datetime import datetime
+
 
 class RecentTexteList(ListView):
 
@@ -19,6 +18,7 @@ class RecentTexteList(ListView):
         self.flatpage = get_object_or_404(IndexFlatPage, url='/index/')
         return Texte.objects.filter(publique=True, date_de_publication__lte=datetime.now()).order_by('date_de_publication')
 
+
 class AuteurTexteList(ListView):
 
     template_name = 'librairie/textes_par_auteur.html'
@@ -31,6 +31,7 @@ class AuteurTexteList(ListView):
     def get_queryset(self):
         self.auteur = get_object_or_404(Auteur, slug=self.args[0])
         return Texte.objects.filter(auteur=self.auteur)
+
 
 class TagTexteList(ListView):
 
@@ -45,13 +46,20 @@ class TagTexteList(ListView):
         self.tag = get_object_or_404(Tag, slug=self.args[0])
         return Texte.objects.filter(tags=self.tag)
 
+
 class AuteurList(ListView):
 
-    model = Auteur
+    queryset = Auteur.objects.all().extra(select={'imf': 'UPPER(nom)'}, order_by=['imf'])
+    context_object_name = 'auteur_list'
+    model = Texte
+
 
 class TagList(ListView):
 
-    model = Tag
+    queryset = Tag.objects.order_by('tag')
+    context_object_name = 'tag_list'
+    model = Texte
+
 
 class TexteDetailView(DetailView):
 

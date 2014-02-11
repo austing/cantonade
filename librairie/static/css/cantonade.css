@@ -61,6 +61,8 @@ body.tag #upper-container, body.list #upper-container {
 }
 
 
+
+
    #book-title {
      width: 850px;
      margin: 0 auto;
@@ -151,11 +153,27 @@ body.tag #upper-container, body.list #upper-container {
    #top-content {
      width: 850px;
      margin: 0 auto;
-    height: 50px;
+    height: 20px;
     padding: 40px;
     padding-top: 0px;
     padding-bottom: 0px;
    color: black;
+   }
+
+   #nav {
+    width: 850px;
+    margin: 0 auto;
+     color: rgba(255,255,255,0.9);
+     text-align: left;
+     padding-top: 16px;
+   }
+   #nav a {
+     color: rgba(255,255,255,0.9);
+     text-decoration: none;
+   }
+   #nav a:hover {
+     color: white;
+     border-bottom: thin rgba(255,255,255,0.6) solid;
    }
 
    #book-content {
@@ -198,6 +216,11 @@ body.tag #upper-container, body.list #upper-container {
      padding-bottom: 4px;
      border-top: thin grey dashed;
    }
+   
+   #text-list div.text.no-texts {
+    padding-bottom: 15px;
+   }
+   
    #text-list div.text:last-child {
      border-bottom: thin grey dashed;
 
@@ -343,7 +366,6 @@ background-image:url('/static/images/bluebg-d2.png');
 
     #site-title {
       position: relative;
-      top: 34px;
      padding: 8px;
      color: rgba(0,0,0,0.7);
      font-weight: bold;
@@ -353,8 +375,7 @@ background-image:url('/static/images/bluebg-d2.png');
       cursor: hand;
     }
     #site-title:hover {
-       background-image:url('/static/images/yellowgreybg.png');    
-    background-repeat:repeat;
+       background-color: white;    
     }
 
    .button {
@@ -435,4 +456,5 @@ background-image:url('/static/images/bluebg-d2.png');
   a.big-tag:hover {
     color: black;
   }
+   
    

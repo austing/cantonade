@@ -43,6 +43,11 @@
             </div>
     </div>
     {% endfor %}
+    {% if not texte_list %}
+    <div class="text no-texts">
+        Aucun texte édité
+    </div>
+    {% endif %}
     </div>
   </div>
 </div>
