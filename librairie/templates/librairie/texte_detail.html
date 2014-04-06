@@ -42,8 +42,9 @@
                 </div>
                 
                 <div id="buttons">
-                {% if texte.pdf %}<a class="button" href="{{MEDIA_URL}}{{texte.pdf}}">Télécharger format zine</a>{% endif %}
                 <a class="button" id="lire">Lire en ligne</a>
+                {% if texte.pdf %}<a class="button" href="{{MEDIA_URL}}{{texte.pdf}}" target="_blank">.pdf format zine</a>{% endif %}
+                {% if texte.epub %}<a class="button" href="{{MEDIA_URL}}{{texte.epub}}" target="_blank">.epub</a>{% endif %}
                 </div>    
           </div>
         {% endblock %}

@@ -31,6 +31,7 @@ class Texte(models.Model):
     description=models.TextField(blank=True, null=True)
     tags=models.ManyToManyField(Tag)
     html = models.FileField(upload_to="livres-html", blank=True, null=True)
+    epub = models.FileField(upload_to="livres-epub", blank=True, null=True)
     pdf = models.FileField(upload_to="livres-pdf", blank=True, null=True)
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)

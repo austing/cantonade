@@ -138,6 +138,7 @@ background: rgba(41, 0, 0, 1);
 
    #lower-container {
      width: 100%;
+     min-height: 170px;
    }
    #lower-container.filled {
     height: auto;
@@ -400,8 +401,10 @@ border: 1px solid black;
     }
 
    .button {
-     padding: 8px;
-     padding-bottom: 10px;
+        font-family: Futura, Helvetica, Sans Serif;
+     font-weight: bold;
+     padding: 14px;
+     padding-top: 11px;
      color: rgba(0,0,0,0.7);
      font-weight: bold;
      background-color: rgba(180,190,170,0.8);
@@ -414,6 +417,7 @@ background-image: url('/static/images/littlered1.png');
      cursor: pointer;
      cursor: hand;
    }
+   
    
    .button:hover {
     color: black;
