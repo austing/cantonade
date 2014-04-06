@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.flatpages.models import FlatPage
+from django.utils import timezone
 
 class IndexFlatPage(FlatPage):
     subtitle = models.TextField(verbose_name="deuxieme titre", blank=True, null=True)
@@ -36,7 +37,14 @@ class Texte(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True)
     date_modification = models.DateTimeField(auto_now=True)
     publique = models.BooleanField(default=False)
-    date_de_publication = models.DateTimeField(default=datetime.now, blank=True, null=True)
+    date_de_publication = models.DateTimeField(default=datetime.now, blank=True, null=True, verbose_name="date et heure de publication")
 
     def __unicode__(self):
-        return self.titre+' ('+str(self.auteur)+')'
+        return self.titre+' ('+unicode(self.auteur)+')'
+
+    @property
+    def visible(self):
+        now = timezone.now().astimezone(timezone.get_current_timezone())
+        if not self.publique or self.date_de_publication > now:
+            return False
+        return True

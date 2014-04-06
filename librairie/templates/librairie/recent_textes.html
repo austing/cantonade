@@ -27,7 +27,7 @@
 
 
 {% block page_title %}
-    <a class="h1" href="#">{{flatpage.title}}</a><a class="h2" href="#"> {{flatpage.subtitle}}&nbsp;</a>
+    <a class="h1" href="#">{{flatpage.title}}&nbsp;</a><a class="h2" href="#">&nbsp;{{flatpage.subtitle}}&nbsp;</a>
 {% endblock %}
 
 {% block page_details %}
@@ -52,9 +52,7 @@
     <div class="text">
     <a href='/texte/{{texte.slug}}' class="title">{{texte.titre}}</a><span class="author"><a href='/auteur/{{texte.auteur.slug}}'>{{texte.auteur.prenom}} {{texte.auteur.nom}}</a></span>
     
-            <div class="text-tags"><div class='text-date'>{{texte.date_de_publication|naturalday}}</div>
-            {% for tag in texte.tags.all %}
-            <a href="/tag/{{tag.slug}}" class="tag">{{tag.tag}}</a> 
+            <div class="text-tags"><div class='text-date'>{{texte.date_de_publication|naturalday}}</div>{% for tag in texte.tags.all %}<a href="/tag/{{tag.slug}}" class="tag">{{tag.tag}}</a> 
             {% endfor %}
             </div>
     

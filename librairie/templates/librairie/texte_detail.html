@@ -22,7 +22,10 @@
 {% block title %}La cantonade - {{texte.titre}}, {{texte.auteur}}{% endblock %}
 
         {% block page_title %}
-            <a class="h1" href="#">{{texte.titre}} </a><a class="h2" href="/auteur/{{texte.auteur.slug}}">{{texte.auteur.prenom}} {{texte.auteur.nom}}&nbsp;</a>
+            {% if texte.visible == False %}
+                <span class="preview-text">mode aperçu texte non publié</span><br><br>
+            {% endif %}
+            <a class="h1" href="#">{{texte.titre}}&nbsp;</a><a class="h2" href="/auteur/{{texte.auteur.slug}}">&nbsp;{{texte.auteur.prenom}} {{texte.auteur.nom}}&nbsp;</a>
         {% endblock %}
 
     

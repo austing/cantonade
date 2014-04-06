@@ -14,13 +14,13 @@
      margin: 0;
      padding: 0;
      background-color: #880033;
-background-image: url('../images/nicetilenoir.png');
+background-image: url('/static/images/nicetilenoir.png');
     background-repeat:repeat;
 /*     background-color: #FFEE00; */
     font-family: Courier New;
    }
 /*   body.tag, body.list {
-       background-image:url('../images/bluebg-d2.png');
+       background-image:url('/static/images/bluebg-d2.png');
 
    }*/
    div {
@@ -39,24 +39,34 @@ background-image: url('../images/nicetilenoir.png');
     background-repeat:repeat;
     text-decoration: none;
    }
-   a.h1:hover {
-    color: #330022;
-    
+   
+  span.preview-text {
+    font-family: Courier New;
+    font-size: 50px;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    padding: 0px;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    display: inline;
+    background-color: rgba(238, 236, 194, 0.5);
+    background-repeat:repeat;
+    text-decoration: none;
    }
    
    a.h2 {
 color: rgba(82, 25, 10, 1);
-background-image: url('../images/littlered1.png');
+background-image: url('/static/images/littlered1.png');
     }
 
 #upper-container {
-background-image: url('../images/nicetilerouge.png');
+background-image: url('/static/images/nicetilerouge.png');
     background-repeat:repeat;
 
 }
 
 /*body.tag #upper-container, body.list #upper-container {
-       background-image:url('../images/greenbg.png');
+       background-image:url('/static/images/greenbg.png');
 }*/
 
 
@@ -176,8 +186,7 @@ background: rgba(41, 0, 0, 1);
      text-decoration: none;
    }
    #nav a:hover {
-     color: rgba(163, 161, 189, 1);
-     border-bottom: thin rgba(163, 161, 189, 0.87) solid;
+         color: rgba(116, 136, 188, 1);
    }
 
    #book-content {
@@ -223,7 +232,7 @@ background: rgba(41, 0, 0, 1);
 
      padding-top: 15px;
      padding-bottom: 4px;
-     border-top: thin grey dashed;
+
         font-size: 16pt;
 
    }
@@ -233,7 +242,7 @@ background: rgba(41, 0, 0, 1);
    }
    
    #text-list div.text:last-child {
-     border-bottom: thin grey dashed;
+
 
    }
    #text-list a.title {
@@ -257,49 +266,39 @@ background: rgba(41, 0, 0, 1);
 
         text-decoration: none;
         font-size: 16pt;
-        color: purple;
+        color: rgba(128, 22, 127, 1);
     }
-    #text-list .author a:hover {
-        color: black;
-    }
+
 
     div.text-tags {
      margin-bottom: 5px;
      padding: 0px;
      margin-top: 5px;
-     text-align: right;
+
+    margin-left: 20px;
   }
 
   #text-list div.text-tags a.tag {
-padding: 5px;
-padding-top: 6px;
-padding-bottom: 6px;
-color: rgba(173, 115, 139, 0.8);
-display: inline-block;
+color: rgba(128, 22, 127, 1);
 text-decoration: none;
-background: rgba(217, 202, 230, 0.86);
-font-size: 11pt;
+font-size: 13pt;
+font-family: Futura, Helvetica, Sans Serif;
 }
-  #text-list div.text-tags a.tag:last-child {
-    border-right: none;
-    padding-right: 0px;
-  }
-  div.text-tags a:hover {
-    color: black;
-  }
 
    .text-date {
    display: inline-block;
+     font-size: 13pt;
+     line-height: 130%;
+     margin-top: 10px;
      padding-right: 20px;
-     margin-right: 5px;
-     line-height: 180%;
+     margin-right: 20px;
 
-     border-right: 3px black solid;
+     border-right: 1px black solid;
    }
 
 
   #lower-container.filled {
-    background-image:url('../images/nicetilenoir.png');
+    background-image:url('/static/images/nicetilenoir.png');
   }
 
 
@@ -317,7 +316,7 @@ height: auto;
 }
 
 /*body.tag #lower-container.filled {
-background-image:url('../images/bluebg-d2.png');
+background-image:url('/static/images/bluebg-d2.png');
 }*/
 
    #lower-toe, #lower-toptoe {
@@ -348,11 +347,11 @@ margin-bottom: 40px;
    }
    #lower-toptoe.filled {
    display: block;
-background-image: url('../images/nicetilerouge.png');
+background-image: url('/static/images/nicetilerouge.png');
     background-repeat:repeat;
    }
 /*   body.tag #lower-toptoe.filled {
-       background-image:url('../images/greenbg.png');
+       background-image:url('/static/images/greenbg.png');
    }*/
    
    #lower-toptoe.filled.transparent {
@@ -396,9 +395,6 @@ border: 1px solid rgba(143, 0, 255, 0.14);
     #site-title:hover {
          color: rgba(116, 136, 188, 1);
 
-background-color: black;
-border: 1px solid black;
-
     }
 
    .button {
@@ -413,7 +409,7 @@ border: 1px solid black;
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-background-image: url('../images/littlered1.png');
+background-image: url('/static/images/littlered1.png');
     background-repeat:repeat;
      cursor: pointer;
      cursor: hand;
@@ -426,7 +422,7 @@ background-image: url('../images/littlered1.png');
 
 
     #lower-heading {
-background-image: url('../images/littlered1.png');
+background-image: url('/static/images/littlered1.png');
 
     }
    
@@ -440,7 +436,7 @@ background-image: url('../images/littlered1.png');
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-background-image: url('../images/littlered1.png');
+background-image: url('/static/images/littlered1.png');
 background-repeat:repeat;
      cursor: pointer;
    }
@@ -457,7 +453,7 @@ background-repeat:repeat;
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-background-image: url('../images/littlered1.png');
+background-image: url('/static/images/littlered1.png');
 background-repeat:repeat;
      position: relative;
      top: -8px;
@@ -471,7 +467,7 @@ background-repeat:repeat;
     margin: 0px;
     padding: 0px;
     color: rgba(0,0,0,0.6);
-background-image: url('../images/littlered1.png');
+background-image: url('/static/images/littlered1.png');
 background-repeat:repeat;
     text-decoration: none;
     display: block;

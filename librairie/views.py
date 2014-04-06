@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
+from django.http import Http404
 from django.views.generic import ListView, DetailView
 from librairie.models import Auteur, Tag, Texte, IndexFlatPage
 from datetime import datetime
-
+from django.contrib.admin.views.decorators import staff_member_required
+from django.utils import timezone
 
 class RecentTexteList(ListView):
 
@@ -16,7 +18,8 @@ class RecentTexteList(ListView):
 
     def get_queryset(self):
         self.flatpage = get_object_or_404(IndexFlatPage, url='/index/')
-        return Texte.objects.filter(publique=True, date_de_publication__lte=datetime.now()).order_by('date_de_publication')
+        now = timezone.now().astimezone(timezone.get_current_timezone())
+        return Texte.objects.filter(publique=True, date_de_publication__lte=now).order_by('-date_de_publication')
 
 
 class AuteurTexteList(ListView):
@@ -30,8 +33,8 @@ class AuteurTexteList(ListView):
 
     def get_queryset(self):
         self.auteur = get_object_or_404(Auteur, slug=self.args[0])
-        return Texte.objects.filter(auteur=self.auteur)
-
+        now = timezone.now().astimezone(timezone.get_current_timezone())
+        return Texte.objects.filter(auteur=self.auteur, publique=True, date_de_publication__lte=now).order_by('-date_de_publication')
 
 class TagTexteList(ListView):
 
@@ -64,3 +67,11 @@ class TagList(ListView):
 class TexteDetailView(DetailView):
 
     model = Texte
+
+    def get_object(self):
+        object = super(TexteDetailView, self).get_object()
+        now = timezone.now().astimezone(timezone.get_current_timezone())
+        if not object.visible and not self.request.user.is_staff:
+            raise Http404
+        return object
+

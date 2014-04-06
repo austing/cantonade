@@ -1,5 +1,7 @@
 {% extends "librairie/base.html" %}
 
+{% load humanize %}
+
 {% block title %}La cantonade - {{tag.tag}}{% endblock %}
 
 {% block bodyclass %}tag{% endblock %}
@@ -27,10 +29,9 @@
     {% for texte in texte_list %}
     <div class="text">
     <a href='/texte/{{texte.slug}}' class="title">{{texte.titre}}</a><span class="author"><a href='/auteur/{{texte.auteur.slug}}'>{{texte.auteur.prenom}} {{texte.auteur.nom}}</a></span>
-            <div class="text-tags">
-            {% for tag in texte.tags.all %}
-            <a href="/tag/{{tag.slug}}" class="tag">{{tag.tag}}</a> 
+            <div class="text-tags"><div class='text-date'>{{texte.date_de_publication|naturalday}}</div>{% for tag in texte.tags.all %}<a href="/tag/{{tag.slug}}" class="tag">{{tag.tag}}</a> 
             {% endfor %}
+            </div>
             </div>
     </div>
     {% endfor %}
