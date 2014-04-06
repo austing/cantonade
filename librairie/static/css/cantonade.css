@@ -278,6 +278,7 @@ color: rgba(173, 115, 139, 0.8);
 display: inline-block;
 text-decoration: none;
 background: rgba(217, 202, 230, 0.86);
+font-size: 11pt;
 }
   #text-list div.text-tags a.tag:last-child {
     border-right: none;
