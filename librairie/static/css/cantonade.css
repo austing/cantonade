@@ -14,15 +14,15 @@
      margin: 0;
      padding: 0;
      background-color: #880033;
-    background-image:url('/static/images/bluebg-vd.png');
+background-image: url('/static/images/nicetilenoir.png');
     background-repeat:repeat;
 /*     background-color: #FFEE00; */
     font-family: Courier New;
    }
-   body.tag, body.list {
+/*   body.tag, body.list {
        background-image:url('/static/images/bluebg-d2.png');
 
-   }
+   }*/
    div {
      margin: 0px;
    }
@@ -34,8 +34,8 @@
     padding: 0px;
     margin: 0px;
     padding: 0px;
-    color: rgba(0,0,0,0.6);
-    background-image:url('/static/images/redbg.png');
+    color: black;
+    background-color: rgba(104, 113, 182, 0.7);
     background-repeat:repeat;
     text-decoration: none;
    }
@@ -45,20 +45,19 @@
    }
    
    a.h2 {
-    color: rgba(235,225,185,1);
-    background-image:url('/static/images/redbg2.png');
-
-   }
+color: rgba(82, 25, 10, 1);
+background-image: url('/static/images/littlered1.png');
+    }
 
 #upper-container {
-    background-image:url('/static/images/bluebg-d.png');
+background-image: url('/static/images/nicetilerouge.png');
     background-repeat:repeat;
 
 }
 
-body.tag #upper-container, body.list #upper-container {
+/*body.tag #upper-container, body.list #upper-container {
        background-image:url('/static/images/greenbg.png');
-}
+}*/
 
 
 
@@ -81,15 +80,19 @@ body.tag #upper-container, body.list #upper-container {
 
    margin: 0px;
    padding: 0px;
+   padding-top: 2px;
+   padding-bottom: 0px;
    margin-bottom: 5px;
    margin-top: 0px;
    
+   border-bottom: 1px solid rgba(255,255,255,0.1);
+   border-top: 1px solid black;
+   
    font-size: 17px;
-   line-height: 20px;
+   line-height: 23px;
    display: inline;
    color: black;
-    background-image:url('/static/images/yellowgreybg.png');
-    background-repeat:repeat;
+background-color: rgba(219, 219, 219, 0.71);
 
   }
   div#description {
@@ -102,18 +105,16 @@ body.tag #upper-container, body.list #upper-container {
   }
 
   div#tags a {
-     padding: 7px;
-     padding-top: 2px;
-     padding-bottom: 3px;
-     color: rgba(0,0,0,0.8);
-     font-weight: bold;
-    background-image:url('/static/images/yellowgreybg.png');
-     border: 2px solid rgba(255,255,255,0.1);
-     display: inline-block;
-     text-decoration: none;
+padding: 10px;
+padding-bottom: 9px;
+color: rgba(167, 142, 152, 0.8);
+display: inline-block;
+text-decoration: none;
+background: rgba(41, 0, 0, 0.86);
   }
   div#tags a:hover {
-    color: black;
+color: rgba(167, 142, 152, 1);
+background: rgba(41, 0, 0, 1);
   }
   
   
@@ -144,7 +145,7 @@ body.tag #upper-container, body.list #upper-container {
    
    #top-container {
     width: 100%;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.4);
     font-size: 17px;
     color: black;
     text-align: center;
@@ -162,18 +163,20 @@ body.tag #upper-container, body.list #upper-container {
 
    #nav {
     width: 850px;
+        font-family: Futura, Helvetica, Sans Serif;
+        font-weight: bold;
     margin: 0 auto;
-     color: rgba(255,255,255,0.9);
+     color: rgba(163, 161, 189, 0.87);
      text-align: left;
      padding-top: 16px;
    }
    #nav a {
-     color: rgba(255,255,255,0.9);
+     color: rgba(163, 161, 189, 0.87);
      text-decoration: none;
    }
    #nav a:hover {
-     color: white;
-     border-bottom: thin rgba(255,255,255,0.6) solid;
+     color: rgba(163, 161, 189, 1);
+     border-bottom: thin rgba(163, 161, 189, 0.87) solid;
    }
 
    #book-content {
@@ -183,15 +186,20 @@ body.tag #upper-container, body.list #upper-container {
      padding-top: 10px;
      padding-bottom: 10px;
      font-family: Courier New;
-     font-size: 12pt;
-     line-height: 14pt;
      padding-bottom: 15px;
      color: black;
    }
 
    #book-content p, #book-content span, #book-content div {
-        padding-left: 100px;
-        padding-right: 100px;
+    font-family: Georgia, serif;
+    font-size: 13.5pt;
+    line-height: 20pt;
+    color: black;
+    text-align: justify;
+    margin-top: 20pt;
+
+        padding-left: 25px;
+        padding-right: 25px;
    }
 
    #text-list {
@@ -215,6 +223,8 @@ body.tag #upper-container, body.list #upper-container {
      padding-top: 15px;
      padding-bottom: 4px;
      border-top: thin grey dashed;
+        font-size: 16pt;
+
    }
    
    #text-list div.text.no-texts {
@@ -227,23 +237,25 @@ body.tag #upper-container, body.list #upper-container {
    }
    #text-list a.title {
         text-decoration: none;
+        font-family: Futura, Helvetica, Sans Serif;
+        font-weight: bold;
         font-size: 16pt;
-        line-height: 19pt;
         color: black;
-     font-weight: bold;
-
+        line-height: 19pt;
+        text-align: left;
+        padding-right: 10px;
    }
 
    #text-list .author {
         text-decoration: none;
-        font-size: 16pt;
-        line-height: 19pt;
+        font-family: Futura, Helvetica, Sans Serif;
+        color: purple;
     }
 
    #text-list .author a {
+
         text-decoration: none;
         font-size: 16pt;
-        line-height: 19pt;
         color: purple;
     }
     #text-list .author a:hover {
@@ -258,15 +270,14 @@ body.tag #upper-container, body.list #upper-container {
   }
 
   #text-list div.text-tags a.tag {
-     color: rgba(0,0,0,0.8);
-     font-weight: bold;
-    background: transparent;
-     display: inline;
-     text-decoration: none;
-     padding: 0px;
-     padding-right: 10px;
-     border-right: thin black solid;
-  }
+padding: 5px;
+padding-top: 6px;
+padding-bottom: 6px;
+color: rgba(173, 115, 139, 0.8);
+display: inline-block;
+text-decoration: none;
+background: rgba(217, 202, 230, 0.86);
+}
   #text-list div.text-tags a.tag:last-child {
     border-right: none;
     padding-right: 0px;
@@ -286,26 +297,26 @@ body.tag #upper-container, body.list #upper-container {
 
 
   #lower-container.filled {
-    background-image:url('/static/images/greenbg1.png');
+    background-image:url('/static/images/nicetilenoir.png');
   }
 
 
 #lower-container.filled #book-content {
     background-image: none;
-    background-image:url('/static/images/yellowgreybg.png');
+background-color: rgba(227, 229, 216, 0.95);
     height: auto;
 }
 
 #lower-container.filled #text-list {
     background-image: none;
-    background-image:url('/static/images/yellowgreybg.png');
-    height: auto;
+background-color: rgba(227, 229, 216, 0.95);
+height: auto;
     padding-top: 20px;
 }
 
-body.tag #lower-container.filled {
+/*body.tag #lower-container.filled {
 background-image:url('/static/images/bluebg-d2.png');
-}
+}*/
 
    #lower-toe, #lower-toptoe {
      width: 100%;
@@ -326,8 +337,8 @@ background-image:url('/static/images/bluebg-d2.png');
     padding-top: 0px;
     padding-bottom: 0px;
    color: black;
-       background-image:url('/static/images/yellowgreybg.png');
-     margin-bottom: 40px;
+background-color: rgba(227, 229, 216, 0.95);
+margin-bottom: 40px;
    }
    
    #lower-toptoe {
@@ -335,12 +346,12 @@ background-image:url('/static/images/bluebg-d2.png');
    }
    #lower-toptoe.filled {
    display: block;
-    background-image:url('/static/images/bluebg-d.png');
+background-image: url('/static/images/nicetilerouge.png');
     background-repeat:repeat;
    }
-   body.tag #lower-toptoe.filled {
+/*   body.tag #lower-toptoe.filled {
        background-image:url('/static/images/greenbg.png');
-   }
+   }*/
    
    #lower-toptoe.filled.transparent {
    background-image: none !important;
@@ -354,8 +365,8 @@ background-image:url('/static/images/bluebg-d2.png');
     padding-top: 0px;
     padding-bottom: 0px;
    color: black;
-       background-image:url('/static/images/yellowgreybg.png');
-       text-align: center;
+background-color: rgba(227, 229, 216, 0.95);
+text-align: center;
    }
 
     #buttons {
@@ -365,17 +376,27 @@ background-image:url('/static/images/bluebg-d2.png');
     }
 
     #site-title {
+        font-family: Futura, Helvetica, Sans Serif;
+        font-weight: bold;
       position: relative;
-     padding: 8px;
-     color: rgba(0,0,0,0.7);
-     font-weight: bold;
+     padding: 13px;
+     padding-top: 6px;
+     padding-bottom: 6px;
+     color:rgba(183, 181, 199, 0.8);
      background-color: rgba(240,230,240,1);
      display: inline-block;
      text-decoration: none;
       cursor: hand;
+      font-size:17px;
+background-color: rgba(14, 25, 37, 0.7);
+border: 1px solid rgba(143, 0, 255, 0.14);
     }
     #site-title:hover {
-       background-color: white;    
+         color: rgba(116, 136, 188, 1);
+
+background-color: black;
+border: 1px solid black;
+
     }
 
    .button {
@@ -388,7 +409,7 @@ background-image:url('/static/images/bluebg-d2.png');
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-    background-image:url('/static/images/redbg2.png');
+background-image: url('/static/images/littlered1.png');
     background-repeat:repeat;
      cursor: pointer;
      cursor: hand;
@@ -400,7 +421,7 @@ background-image:url('/static/images/bluebg-d2.png');
 
 
     #lower-heading {
-    background-image:url('/static/images/greenbg1.png');
+background-image: url('/static/images/littlered1.png');
 
     }
    
@@ -414,16 +435,16 @@ background-image:url('/static/images/bluebg-d2.png');
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-    background-image:url('/static/images/redbg2.png');
-    background-repeat:repeat;
+background-image: url('/static/images/littlered1.png');
+background-repeat:repeat;
      cursor: pointer;
    }
    
    
    .heading {
-     padding: 8px;
-     padding-top: 10px;
-     padding-bottom: 10px;
+        font-family: Futura, Helvetica, Sans Serif;
+     padding: 14px;
+     padding-top: 11px;
      color: rgba(0,0,0,0.7);
      font-weight: bold;
      background-color: rgba(180,190,170,0.8);
@@ -431,8 +452,8 @@ background-image:url('/static/images/bluebg-d2.png');
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-    background-image:url('/static/images/redbg2.png');
-    background-repeat:repeat;
+background-image: url('/static/images/littlered1.png');
+background-repeat:repeat;
      position: relative;
      top: -8px;
    }
@@ -445,8 +466,8 @@ background-image:url('/static/images/bluebg-d2.png');
     margin: 0px;
     padding: 0px;
     color: rgba(0,0,0,0.6);
-    background-image:url('/static/images/redbg3.png');
-    background-repeat:repeat;
+background-image: url('/static/images/littlered1.png');
+background-repeat:repeat;
     text-decoration: none;
     display: block;
     clear: both;

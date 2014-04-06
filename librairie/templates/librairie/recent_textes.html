@@ -50,7 +50,7 @@
     <div class="textes">
     {% for texte in texte_list %}
     <div class="text">
-    <a href='/texte/{{texte.slug}}' class="title">{{texte.titre}}</a><span class="author"> de <a href='/auteur/{{texte.auteur.slug}}'>{{texte.auteur.prenom}} {{texte.auteur.nom}}</a></span>
+    <a href='/texte/{{texte.slug}}' class="title">{{texte.titre}}</a><span class="author"><a href='/auteur/{{texte.auteur.slug}}'>{{texte.auteur.prenom}} {{texte.auteur.nom}}</a></span>
     
             <div class="text-tags"><div class='text-date'>{{texte.date_de_publication|naturalday}}</div>
             {% for tag in texte.tags.all %}

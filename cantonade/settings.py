@@ -94,7 +94,7 @@ STATIC_URL = '/static/'
 SITE_ID = 1
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/Users/austin/Sites/cantonade/cantonade/librairie/media/'
+MEDIA_ROOT = '/Users/austin/Sites/lacantonade/cantonade/librairie/media/'
 
 
 try:
