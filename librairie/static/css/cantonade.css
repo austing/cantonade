@@ -1,12 +1,12 @@
   @font-face {
    font-family: 'Courier Prime';
    font-style: normal;
-   src: local('Courier Prime'), url(/static/font/courier_prime.woff) format('woff');
+   src: local('Courier Prime'), url(../font/courier_prime.woff) format('woff');
   }
   @font-face {
    font-family: 'Erica One';
    font-style: normal;
-   src: local('Erica One'), url(/static/font/erica_one.woff) format('woff');
+   src: local('Erica One'), url(../font/erica_one.woff) format('woff');
   }
 
 
@@ -14,13 +14,13 @@
      margin: 0;
      padding: 0;
      background-color: #880033;
-background-image: url('/static/images/nicetilenoir.png');
+background-image: url('../images/nicetilenoir.png');
     background-repeat:repeat;
 /*     background-color: #FFEE00; */
     font-family: Courier New;
    }
 /*   body.tag, body.list {
-       background-image:url('/static/images/bluebg-d2.png');
+       background-image:url('../images/bluebg-d2.png');
 
    }*/
    div {
@@ -56,17 +56,17 @@ background-image: url('/static/images/nicetilenoir.png');
    
    a.h2 {
 color: rgba(82, 25, 10, 1);
-background-image: url('/static/images/littlered1.png');
+background-image: url('../images/littlered1.png');
     }
 
 #upper-container {
-background-image: url('/static/images/nicetilerouge.png');
+background-image: url('../images/nicetilerouge.png');
     background-repeat:repeat;
 
 }
 
 /*body.tag #upper-container, body.list #upper-container {
-       background-image:url('/static/images/greenbg.png');
+       background-image:url('../images/greenbg.png');
 }*/
 
 
@@ -298,7 +298,7 @@ font-family: Futura, Helvetica, Sans Serif;
 
 
   #lower-container.filled {
-    background-image:url('/static/images/nicetilenoir.png');
+    background-image:url('../images/nicetilenoir.png');
   }
 
 
@@ -316,7 +316,7 @@ height: auto;
 }
 
 /*body.tag #lower-container.filled {
-background-image:url('/static/images/bluebg-d2.png');
+background-image:url('../images/bluebg-d2.png');
 }*/
 
    #lower-toe, #lower-toptoe {
@@ -347,11 +347,11 @@ margin-bottom: 40px;
    }
    #lower-toptoe.filled {
    display: block;
-background-image: url('/static/images/nicetilerouge.png');
+background-image: url('../images/nicetilerouge.png');
     background-repeat:repeat;
    }
 /*   body.tag #lower-toptoe.filled {
-       background-image:url('/static/images/greenbg.png');
+       background-image:url('../images/greenbg.png');
    }*/
    
    #lower-toptoe.filled.transparent {
@@ -409,7 +409,7 @@ border: 1px solid rgba(143, 0, 255, 0.14);
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-background-image: url('/static/images/littlered1.png');
+background-image: url('../images/littlered1.png');
     background-repeat:repeat;
      cursor: pointer;
      cursor: hand;
@@ -422,7 +422,7 @@ background-image: url('/static/images/littlered1.png');
 
 
     #lower-heading {
-background-image: url('/static/images/littlered1.png');
+background-image: url('../images/littlered1.png');
 
     }
    
@@ -436,7 +436,7 @@ background-image: url('/static/images/littlered1.png');
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-background-image: url('/static/images/littlered1.png');
+background-image: url('../images/littlered1.png');
 background-repeat:repeat;
      cursor: pointer;
    }
@@ -453,7 +453,7 @@ background-repeat:repeat;
      border: 2px solid rgba(255,255,255,0.1)
      display: inline-block;
      text-decoration: none;
-background-image: url('/static/images/littlered1.png');
+background-image: url('../images/littlered1.png');
 background-repeat:repeat;
      position: relative;
      top: -8px;
@@ -467,7 +467,7 @@ background-repeat:repeat;
     margin: 0px;
     padding: 0px;
     color: rgba(0,0,0,0.6);
-background-image: url('/static/images/littlered1.png');
+background-image: url('../images/littlered1.png');
 background-repeat:repeat;
     text-decoration: none;
     display: block;
