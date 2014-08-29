@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.humanize',
     'librairie',
-    'south'
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -72,6 +72,12 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -94,8 +100,17 @@ STATIC_URL = '/static/'
 SITE_ID = 1
 
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = '/Users/austin/Sites/lacantonade/cantonade/librairie/media/'
 
+DEFAULT_CONFIG = {
+    'skin': 'moono',
+    'height': 291,
+    'width': 835,
+    'filebrowserWindowWidth': 940,
+    'filebrowserWindowHeight': 725,
+    'extraPlugins' : ['footnotes'],
+}
 
 try:
     from local_settings import *

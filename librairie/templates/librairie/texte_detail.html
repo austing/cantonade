@@ -6,7 +6,6 @@
     $(function(){
       $(".button#lire").click(function(){
         $("#book-content").slideToggle("slow", function(){
-            $("#book-content").load("{{MEDIA_URL}}{{texte.html}}");
             $("#book-content").addClass("filled");
             $("#lower-toptoe").addClass("filled");
             $("#lower-toe-center").addClass("filled");
@@ -28,8 +27,6 @@
             <a class="h1" href="#">{{texte.titre}}&nbsp;</a><a class="h2" href="/auteur/{{texte.auteur.slug}}">&nbsp;{{texte.auteur.prenom}} {{texte.auteur.nom}}&nbsp;</a>
         {% endblock %}
 
-    
-    
 
         {% block page_details %}
           <div id="book-details">
@@ -60,6 +57,7 @@
 
 <div id="lower-container"> 
   <div id="book-content">
+  {{texte.html|safe}}
   </div>
 </div>
 
